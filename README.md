@@ -7,6 +7,7 @@ various targets.
 ## supported targets
 
 - html
+- markdown
 
 ## how it works
 
