@@ -10,6 +10,14 @@ this readme file was written in gemtext and converted to markdown via this libra
 python -m gemtext readme.gmi > README.md
 ```
 
+## cli usage
+
+```
+python -m gemtext [OPTIONS] [GEMTEXT_FILES]
+```
+
+Supported options are --html and --markdown, to convert to html and markdown respectively. The results are printed to standard output. If multiple files are given, the outputs are effectively concatenated.
+
 ## supported targets
 
 - html
