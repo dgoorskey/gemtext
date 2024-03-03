@@ -73,7 +73,7 @@ class MarkdownRenderer:
         result = ''
         for item in list_.items:
             result += '- ' + item.text + '\n'
-        result += '\n\n'
+        result += '\n'
         return result
     
     def _render_blockquote(self, blockquote: ast.BlockQuote) -> str:
