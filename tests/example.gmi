@@ -1,0 +1,48 @@
+# This is a heading
+This is the first paragraph.
+* a list item
+* another list item
+This is the second paragraph.
+
+=> http://example.org/ Absolute URI
+=> //example.org/ No scheme URI
+>this is a blockquote
+
+
+=> /robots.txt Just a path URI
+=> GemText a page link
+* list1
+* list1
+
+* list2
+* list2
+*this should cause a warning
+
+```alt text goes here
+int main (void)
+{
+    printf ("Hello, world!\n");
+    return 0;
+}
+```
+## This is a level 2 heading
+```another pre!
+### This is inside the pre
+#this is goofy
+```this should cause a warning
+
+```
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>hi guys</title>
+    </head>
+    <body>
+        <h1>welcome</h1>
+    <body>
+</html>
+```
+
+#this should cause a warning
+##this should cause another warning
+###this should cause another warning
