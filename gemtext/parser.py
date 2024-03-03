@@ -79,10 +79,10 @@ class Parser:
         if not line.startswith('=>'): return False
         self.in_list = False
 
-        tokens: list[str] = line[2:].lstrip().split()
+        tokens: list[str] = line[2:].lstrip().split(maxsplit=1)
         assert(len(tokens) >= 1)
         url = tokens[0]
-        text = '' if len(tokens) < 2 else tokens[2]
+        text = '' if len(tokens) < 2 else tokens[1]
         node = ast.Link(url, text)
         self.ast.add_item(node)
 

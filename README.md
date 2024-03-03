@@ -2,7 +2,7 @@
 
 a python library and CLI tool for parsing gemtext and converting it to various targets.
 
-[about](https://geminiprotocol.net/docs/gemtext.gmi)
+[more about gemtext](https://geminiprotocol.net/docs/gemtext.gmi)
 
 this readme file was written in gemtext and converted to markdown via this library, by running the below command:
 
