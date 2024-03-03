@@ -3,24 +3,27 @@ from . import ast
 class HTMLRenderer:
     def __init__(self) -> None:
         pass
+
+    def _sanitize(self, text: str) -> str:
+        return text.replace('<', '&lt;').replace('>', '&gt;')
     
     def _render_blankline(self, blankline: ast.BlankLine) -> str:
         return '<br>\n'
 
     def _render_heading(self, heading: ast.Heading) -> str:
-        return '<h' + str(heading.level) + '>' + heading.text + '</h' + str(heading.level) + '>\n'
+        return '<h' + str(heading.level) + '>' + self._sanitize(heading.text) + '</h' + str(heading.level) + '>\n'
     
     def _render_paragraph(self, paragraph: ast.Paragraph) -> str:
-        return '<p>' + paragraph.text + '</p>\n'
+        return '<p>' + self._sanitize(paragraph.text) + '</p>\n'
     
     def _render_link(self, link: ast.Link) -> str:
-        return '<a href="' + link.url + '">' + link.text + '</a>\n'
+        return '<a href="' + self._sanitize(link.url) + '">' + self._sanitize(link.text) + '</a>\n'
     
     def _render_list(self, list_: ast.List) -> str:
         result = '<ul>\n'
 
         for item in list_.items:
-            result += '<li>' + item.text + '</li>\n'
+            result += '<li>' + self._sanitize(item.text) + '</li>\n'
 
         result += '</ul>\n'
         return result
@@ -29,8 +32,7 @@ class HTMLRenderer:
         return '<blockquote>' + blockquote.text + '</blockquote>\n'
     
     def _render_pre(self, pre: ast.Pre) -> str:
-        sanitized = pre.text.replace('<', '&lt;').replace('>', '&gt;')
-        return '<pre>' + sanitized + '</pre>\n'
+        return '<pre>' + self._sanitize(pre.text) + '</pre>\n'
 
     def render(self, document: ast.Document) -> str:
         html = ''

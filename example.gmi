@@ -46,3 +46,6 @@ int main (void)
 #this should cause a warning
 ##this should cause another warning
 ###this should cause another warning
+
+## these <angle brackets> should be sanitized/escaped
+
